@@ -5,8 +5,13 @@ module.exports = {
     extend: {
       colors: {
         "at-light-green": "#24958a",
+        "at-light-green-2": "#33c3b4",
         "at-green": "#286d5d",
-        "light-grey": "#f1f1f1",
+        "at-orange": "#f28231",
+        "at-yellow": "#e5cc28",
+        "light-grey": "#f3f3f3",
+        "at-grey": "#e7e7e7",
+        "at-border": "#a0a0a0"
       },
     },
     fontFamily: {
