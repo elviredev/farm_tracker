@@ -5,8 +5,12 @@
 @tailwind utilities;
 
 /* Buttons Custom */
+button {
+    @apply mt-6 py-2 px-6 rounded-sm shadow-md self-start text-sm bg-white text-at-light-green-2 duration-200 border-solid border-2 border-at-light-green-2 hover:bg-at-light-green-2 hover:text-white uppercase tracking-wider
+}
+
 .submit {
-    @apply mt-6 py-2 px-6 rounded-sm shadow-md self-start text-sm bg-at-light-green-2 text-white duration-200 border-solid border-2 border-transparent hover:bg-at-orange uppercase tracking-wider
+    @apply mt-6 py-2 px-6 rounded-sm shadow-md self-start text-sm bg-at-light-green-2 text-white duration-200 border-solid border-2 border-transparent hover:bg-at-yellow hover:text-black uppercase tracking-wider
 }
 
 .danger {
@@ -16,3 +20,4 @@
 .warning {
     @apply mt-6 py-2 px-6 rounded-sm shadow-md self-start text-sm bg-at-orange text-white duration-200 border-solid border-2 border-transparent hover:border-at-orange hover:bg-white hover:text-at-orange uppercase tracking-wider
 }
+

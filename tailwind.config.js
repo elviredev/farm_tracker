@@ -8,7 +8,9 @@ module.exports = {
         "at-light-green-2": "#33c3b4",
         "at-green": "#286d5d",
         "at-orange": "#f28231",
+        "at-orange-light": "#f7ae79",
         "at-yellow": "#e5cc28",
+        "at-yellow-light": "#eddc6c",
         "light-grey": "#f3f3f3",
         "at-grey": "#e7e7e7",
         "at-border": "#a0a0a0"

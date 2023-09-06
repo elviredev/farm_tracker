@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-screen-sm mx-auto px-4 py-10">
+  <div class="max-w-screen-sm mx-auto px-4 py-28">
     <!-- Error Handling -->
     <div v-if="errorMsg" class="mb-10 p-4 bg-light-grey rounded-md shadow-lg">
       <p class="text-red-500"> {{ errorMsg }}</p>

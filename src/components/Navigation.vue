@@ -9,21 +9,24 @@
       <!-- Liens -->
       <ul class="flex flex-1 justify-end gap-x-10 text-sm sm:text-base">
         <div class="group">
-          <router-link class="cursor-pointer hover:text-at-orange" :to="{name: 'Home'}">Accueil</router-link>
-          <div class="mx-2 group-hover:border-b group-hover:border-at-orange"></div>
+          <router-link class="cursor-pointer hover:text-at-yellow" :to="{name: 'Home'}">Accueil</router-link>
+          <div class="mx-2 group-hover:border-b group-hover:border-at-yellow"></div>
         </div>
 
         <div v-if="user"  class="group">
-          <router-link class="cursor-pointer hover:text-at-orange" :to="{name: ''}">Créer</router-link>
-          <div class="mx-2 group-hover:border-b group-hover:border-at-orange"></div>
+          <router-link class="cursor-pointer hover:text-at-yellow" :to="{name: 'Create'}">Créer</router-link>
+          <div class="mx-2 group-hover:border-b group-hover:border-at-yellow"></div>
         </div>
 
         <div v-if="!user" class="group">
-          <router-link class="cursor-pointer hover:text-at-orange" :to="{name: 'Login'}">Se connecter</router-link>
-          <div class="mx-2 group-hover:border-b group-hover:border-at-orange"></div>
+          <router-link class="cursor-pointer hover:text-at-yellow" :to="{name: 'Login'}">Se connecter</router-link>
+          <div class="mx-2 group-hover:border-b group-hover:border-at-yellow"></div>
         </div>
 
-        <li v-if="user" @click="logout" class="cursor-pointer hover:text-at-orange">Se déconnecter</li>
+        <div v-if="user" class="group">
+          <li @click="logout" class="cursor-pointer hover:text-at-yellow">Se déconnecter</li>
+          <div class="mx-2 group-hover:border-b group-hover:border-at-yellow"></div>
+        </div>
       </ul>
     </nav>
   </header>

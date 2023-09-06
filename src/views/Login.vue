@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-screen-sm mx-auto px-4 py-10">
+  <div class="max-w-screen-sm mx-auto px-4 py-28">
     <!-- Error Handling -->
     <div v-if="errorMsg" class="mb-10 p-4 bg-light-grey rounded-md shadow-lg">
       <p class="text-red-500"> {{ errorMsg }}</p>
@@ -35,7 +35,7 @@
       <Button text="Se connecter" type="submit" />
       <!-- Lien vers page de Register -->
       <router-link class="text-sm mt-6 text-center" :to="{name: 'Register'}">
-        Vous n'avez pas encore de compte ? <span class="text-at-light-green-2 hover:text-at-orange">S'inscrire'</span>
+        Vous n'avez pas encore de compte ? <span class="text-at-light-green-2 hover:text-at-orange">S'inscrire</span>
       </router-link>
 
     </form>
