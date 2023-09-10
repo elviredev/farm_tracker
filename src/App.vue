@@ -8,12 +8,14 @@
 
 <script>
 import Navigation from "@/components/Navigation.vue";
+import Footer from "@/components/Footer.vue";
 import { ref } from "vue";
 import { supabase } from "@/supabase/init";
 import store from "@/store";
+
   export default {
     components: {
-      Navigation
+      Navigation,
     },
     setup() {
       // Create data / vars

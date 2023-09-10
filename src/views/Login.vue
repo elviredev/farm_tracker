@@ -40,6 +40,7 @@
 
     </form>
   </div>
+  <Footer />
 </template>
 
 <script>
@@ -47,9 +48,11 @@ import { ref } from "vue";
 import Button from "@/components/Button.vue";
 import { supabase } from "@/supabase/init";
 import { useRouter } from "vue-router";
+import Footer from "@/components/Footer.vue";
 export default {
   name: "Login",
   components: {
+    Footer,
     Button
   },
   setup() {

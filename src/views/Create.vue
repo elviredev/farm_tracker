@@ -13,7 +13,7 @@
         <form @submit.prevent="createTravaux" class="flex flex-col gap-y-5 w-full">
           <h1 class="text-2xl text-at-light-green">Enregistrer Travaux</h1>
 
-          <div class="flex flex-col gap-y-2 gap-x-6 md:flex-row mb-8">
+          <div class="flex flex-col gap-y-2 gap-x-6 mb-8 md:flex-row">
             <!-- Place Name -->
             <div class="flex flex-col md:w-1/2">
               <label for="place-name" class="mb-1 text-sm text-at-light-green">Lieux des travaux (pièce concernée, jardin)</label>
@@ -191,6 +191,7 @@
         </form>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -199,9 +200,11 @@ import { ref } from "vue";
 import { uid } from "uid";
 import { supabase } from "@/supabase/init";
 import Button from "@/components/Button.vue";
+import Footer from "@/components/Footer.vue";
 export default {
   name: "Create",
   components: {
+    Footer,
     Button
   },
   setup() {
