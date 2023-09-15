@@ -7,7 +7,7 @@
       <router-link :to="{name: 'Create'}" class="m-16 py-2 px-6 rounded-sm shadow-md text-sm bg-at-light-green-2 text-white duration-200 border-solid border-2 border-transparent hover:bg-at-yellow uppercase hover:text-black tracking-wider">Créer vos travaux</router-link>
     </div>
     <!-- Data présentes en BDD -->
-    <div class="flex flex-col items-center justify-center gap-14">
+    <div class="flex flex-col gap-14">
       <!-- Total Travaux -->
       <div v-if="total > 0" class="p-8 max-w-screen-sm bg-light-grey flex rounded-md shadow-md ml-0 lg:self-start ">
         <p class="text-2xl text-center text-black">
