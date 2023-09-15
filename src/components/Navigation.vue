@@ -13,6 +13,11 @@
           <div class="mx-2 group-hover:border-b group-hover:border-at-yellow"></div>
         </div>
 
+        <div class="group">
+          <router-link class="cursor-pointer hover:text-at-yellow" :to="{name: 'Projects'}">Projets</router-link>
+          <div class="mx-2 group-hover:border-b group-hover:border-at-yellow"></div>
+        </div>
+
         <div v-if="user"  class="group">
           <router-link class="cursor-pointer hover:text-at-yellow" :to="{name: 'Create'}">Créer</router-link>
           <div class="mx-2 group-hover:border-b group-hover:border-at-yellow"></div>

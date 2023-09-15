@@ -51,6 +51,18 @@
           <h1 v-else class="text-at-light-green text-2xl text-center">{{ data.placeName }}</h1>
         </div>
 
+        <div v-if="edit" class="w-full mt-6 flex items-center space-x-2 text-at-light-green">
+          <label for="checkbox" >Travaux réalisés</label>
+          <input
+            class="accent-at-light-green-2"
+            type="checkbox"
+            id="checkbox"
+            v-model="data.isFinished"
+            true-value="true"
+            false-value="false"
+          >
+        </div>
+
       </div>
 
       <!-- Details travaux (partie basse) -->
@@ -361,7 +373,8 @@ export default {
             .from('travaux')
             .update({
               placeName: data.value.placeName,
-              details: data.value.details
+              isFinished: data.value.isFinished,
+              details: data.value.details,
             })
             .eq("id", currentId)
         // Si error on va dans le catch

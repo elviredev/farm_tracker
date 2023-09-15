@@ -41,6 +41,18 @@
                 <option value="interieur">Intérieur 🏠</option>
               </select>
             </div>
+
+            <div class="flex items-center space-x-2 text-at-light-green">
+              <label for="checkbox" >Travaux réalisés</label>
+              <input
+                  class="accent-at-light-green-2"
+                  type="checkbox"
+                  id="checkbox"
+                  v-model="isFinished"
+                  true-value="true"
+                  false-value="false"
+              >
+            </div>
           </div>
 
           <!-- Extérieur inputs -->
@@ -211,6 +223,7 @@ export default {
     // Create data
     const placeName = ref("")
     const locationType = ref("choisir-emplacement")
+    const isFinished = ref(true)
     const details = ref([])
     const statusMsg = ref(null)
     const errorMsg = ref(null)
@@ -267,6 +280,7 @@ export default {
           {
             placeName: placeName.value,
             locationType: locationType.value,
+            isFinished: isFinished.value,
             details: details.value
           }
         ])
@@ -277,6 +291,7 @@ export default {
         // réinitialiser les données
         placeName.value = null
         locationType.value = "choisir-emplacement"
+        isFinished.value = true
         details.value = []
         // temps d'affichage du msg de succès
         setTimeout(() => {
@@ -290,7 +305,7 @@ export default {
       }
     }
 
-    return { placeName, locationType, details, statusMsg, errorMsg, addDetail, locationTypeChange, deleteDetail, createTravaux }
+    return { placeName, locationType, isFinished, details, statusMsg, errorMsg, addDetail, locationTypeChange, deleteDetail, createTravaux }
   }
 }
 </script>

@@ -5,6 +5,7 @@ import Login from "@/views/Login.vue";
 import Register from "@/views/Register.vue";
 import Create from "@/views/Create.vue";
 import ViewTravaux from "@/views/ViewTravaux.vue";
+import Projects from "@/views/Projects.vue";
 
 
 const routes = [
@@ -14,6 +15,15 @@ const routes = [
     component: Home,
     meta: {
       title: "Accueil",
+      auth: false
+    }
+  },
+  {
+    path: '/projects',
+    name: 'Projects',
+    component: Projects,
+    meta: {
+      title: "Projets",
       auth: false
     }
   },

@@ -11,47 +11,45 @@
       <!-- Total Travaux -->
       <div v-if="total > 0" class="p-8 max-w-screen-sm bg-light-grey flex rounded-md shadow-md ml-0 lg:self-start ">
         <p class="text-2xl text-center text-black">
-          Total travaux réalisés : {{ total }} €
+          Total projets : {{ total }} €
         </p>
       </div>
       <div  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         <div v-for="(travaux, index) in detailsTravaux" :key="index">
-          <!-- Cards Travaux réalisés -->
-            <!-- Quand clic sur une carte on est renvoyé vers le détail du travaux. Le plus simple est d'entourer les card dans un lien -->
-            <router-link
-                class="flex flex-col items-center bg-light-grey p-8 shadow-md rounded-md cursor-pointer hover:bg-at-yellow-light hover:scale-105 transition-all duration-200"
-                :to="{name: 'View-Travaux', params: { travauxId: travaux.id }}"
-            >
-              <!-- Image pour exterieur -->
-              <img
-                  v-if="travaux.locationType === 'exterieur'"
-                  src="@/assets/images/garden-green.png"
-                  class="h-28 w-auto"
-                  alt="fleurs en pot"
+          <!-- Cards projets de travaux  -->
+              <!-- Quand clic sur une carte on est renvoyé vers le détail du travaux. Le plus simple est d'entourer les card dans un lien -->
+              <router-link
+                  class="flex flex-col items-center bg-at-light-green-2 p-8 shadow-md rounded-md cursor-pointer hover:bg-at-green hover:scale-105 transition-all duration-200"
+                  :to="{name: 'View-Travaux', params: { travauxId: travaux.id }}"
               >
+                <!-- Image pour exterieur -->
+                <img
+                    v-if="travaux.locationType === 'exterieur'"
+                    src="@/assets/images/garden-light.png"
+                    class="h-28 w-auto"
+                    alt="fleurs en pot"
+                >
 
-              <!-- Image pour interieur -->
-              <img
-                  v-else
-                  src="@/assets/images/reparation-green.png"
-                  class="h-28 w-auto"
-                  alt="mur en briques"
-              >
+                <!-- Image pour interieur -->
+                <img
+                    v-else
+                    src="@/assets/images/reparation-light.png"
+                    class="h-28 w-auto"
+                    alt="mur en briques"
+                >
 
-              <p class="mt-6 py-1 px-3 bg-at-light-green text-xs text-white shadow-md rounded-lg">
-                {{ travaux.locationType }}
-              </p>
+                <p class="mt-6 py-1 px-3 bg-at-grey text-xs text-at-light-green-2 shadow-md rounded-lg">
+                  {{ travaux.locationType }}
+                </p>
 
-              <h1 class="mt-8 mb-2 text-center text-xl text-at-light-green">
-                {{ travaux.placeName }}
-              </h1>
+                <h1 class="mt-8 mb-2 text-center text-xl text-white">
+                  {{ travaux.placeName }}
+                </h1>
 
-              <p class="mt-2 py-1 px-3 bg-at-gray text-sm text-black shadow-md rounded-lg">Montant: <span class="font-bold">{{ travaux.prix }}</span> €</p>
+                <p class="mt-2 py-1 px-3 bg-at-light-green text-sm text-white shadow-md rounded-lg">Montant: <span class="font-bold">{{ travaux.prix }}</span> €</p>
 
-            </router-link>
-          </div>
-
-
+              </router-link>
+            </div>
       </div>
     </div>
   </div>
@@ -106,7 +104,7 @@ export default {
         const { data: travaux, error } = await supabase
             .from('travaux')
             .select('*')
-            .eq('isFinished', true)
+            .eq('isFinished', false)
 
         // si error on passe dans le catch
         if (error) throw error
@@ -123,13 +121,13 @@ export default {
     // Run data function (exécuter la fonction)
     getData()
 
-    // Calculer total des prix pour les travaux réalisés (isFinished)
+    // Calculer total des prix pour les projets de travaux
     const calculateTotalPrice = async () => {
       try {
         const { data, error } = await supabase
             .from('travaux')
             .select('details')
-            .eq('isFinished', true)
+            .eq('isFinished', false)
         if (error) throw error;
         // Récupérer la colonne "price" de chaque ligne
         const prices = data.map(row => {
