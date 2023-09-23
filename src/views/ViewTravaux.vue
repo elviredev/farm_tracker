@@ -162,13 +162,13 @@
                 <option value="carrelage">Carrelage</option>
                 <option value="decoration">Décoration</option>
                 <option value="electricite">Eléctricité</option>
-                <option value="electricite">Isolation</option>
+                <option value="isolation">Isolation</option>
                 <option value="maconnerie">Maçonnerie</option>
                 <option value="menuiserie">Menuiserie</option>
                 <option value="mobilier">Mobilier</option>
                 <option value="platrerie-peinture">Peinture-Papier</option>
                 <option value="plomberie">Plomberie</option>
-                <option value="plomberie">Réparation</option>
+                <option value="reparation">Réparation</option>
                 <option value="autre">Autre</option>
               </select>
               <p v-else>{{ item.travauxType }}</p>
