@@ -143,10 +143,10 @@ export default {
         const newTotal = prices.reduce((acc, price) => {
           return acc + price
         }, 0)
-        // console.log(newTotal)
+        const formattedTotal = newTotal.toFixed(2)
 
         // Mise à jour var "total" du modèle
-        total.value = newTotal
+        total.value = formattedTotal
         dataLoaded.value = true
         return total
       } catch (error) {
