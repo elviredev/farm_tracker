@@ -1,4 +1,4 @@
-# vue-farm-tracker
+# house-tracker
 
 ## Project setup
 ```
